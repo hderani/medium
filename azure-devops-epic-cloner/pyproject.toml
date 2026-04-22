@@ -1,0 +1,11 @@
+[project]
+name = "ado-epic-cloner"
+version = "0.1.0"
+dependencies = [
+    "azure-devops",
+    "python-dotenv",
+    "msrest"
+]
+
+[project.scripts]
+ado-clone-epic = "ado_epic_cloner.main:main"

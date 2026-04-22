@@ -1,0 +1,24 @@
+parameters:
+  - name: epic_id
+    type: number
+  - name: user_mail
+    type: string
+  - name: user_full_name
+    type: string
+  - name: area_path
+    type: string
+  - name: project
+    type: string
+
+steps:
+  - script: |
+      python -m pip install -r requirements.txt
+      python -m ado_epic_cloner.main \
+        --main-epic-id ${{ parameters.epic_id }} \
+        --user-mail "${{ parameters.user_mail }}" \
+        --user-name "${{ parameters.user_full_name }}" \
+        --area-path "${{ parameters.area_path }}" \
+        --project "${{ parameters.project }}"
+    env:
+      AZURE_DEVOPS_EXT_PAT: $(AZURE_DEVOPS_EXT_PAT)
+      AZURE_DEVOPS_URL: $(AZURE_DEVOPS_URL)

@@ -1,0 +1,21 @@
+trigger: none
+
+parameters:
+  - name: epic_id
+    type: number
+  - name: user_mail
+    type: string
+  - name: user_full_name
+    type: string
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - template: pipelines/clone-epic.yml
+    parameters:
+      epic_id: ${{ parameters.epic_id }}
+      user_mail: ${{ parameters.user_mail }}
+      user_full_name: ${{ parameters.user_full_name }}
+      area_path: "Area of Interest"
+      project: "Area of Interest"
