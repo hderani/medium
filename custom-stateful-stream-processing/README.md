@@ -1,1 +1,1 @@
-# medium
+For more details, you can refer to the published medium article [here](https://medium.com/@enishani/leveraging-transformwithstateinpandas-for-custom-stateful-stream-processing-66c4c04b36b8)
